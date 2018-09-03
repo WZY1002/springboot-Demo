@@ -1,0 +1,60 @@
+
+#spring.datasource.platform=mysql
+#spring.datasource.url=jdbc:mysql://192.168.10.181:3306/dongjingwms?useUnicode=true&autoReconnect=true&amp;characterEncoding=UTF8
+#spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+#spring.datasource.username=djcrm
+#spring.datasource.password=dongjingcrm
+#spring.datasource.max-active=20
+#spring.datasource.max-idle=20
+#spring.datasource.min-idle=1
+#spring.datasource.initial-size=3
+#spring.datasource.maxWait=60000
+
+server:
+  port: 8088
+
+
+# redis公共配置
+spring.redis.poolConfig:
+  maxTotal: 200
+  maxWaitMillis: 60000
+  testOnBorrow: true
+  testWhileIdle: true
+  maxIdle: 8
+  timeBetweenEvictionRunsMillis: 1000
+  numTestsPerEvictionRun: 10
+  minEvictableIdleTimeMillis: 5000
+
+#redis单机版
+spring:
+  redis:
+    host: 192.168.10.173
+    port: 6379
+    password: djredis
+    database: 4
+    timeout: 2000
+#数据源配置
+  datasource:
+    url: jdbc:mysql://192.168.10.181:3306/dongjingwms?useUnicode=true&autoReconnect=true&amp;characterEncoding=UTF8
+    data-username: djcrm
+    data-password: dongjingcrm
+    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/ssmdemo?useUnicode=true&autoReconnect=true&amp;characterEncoding=UTF8
+#    driver-class-name: com.mysql.jdbc.Driver
+#    username: root
+#    password: 123456
+  rabbitmq:
+    host: 192.168.10.185
+    port: 5672
+    username: xiaoqian
+    password: xiaoqian
+
+#redis集群版
+spring.redisCluter.clusterNodes: 192.168.10.187:7001,192.168.10.188:7002,192.168.10.189:7003,192.168.10.187:7004,192.168.10.188:7005 ,192.168.10.189:7006
+spring.redisCluter.connectionTimeout: 2000
+spring.redisCluter.soTimeout: 2000
+spring.redisCluter.maxAttempts: 5
+spring.redisCluter.password: crmredis
+
+
+
