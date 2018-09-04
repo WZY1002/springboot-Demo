@@ -6,7 +6,7 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
 /**
- * RMI提供服端
+ * RMI提供服务端
  * @author wzy
  * @return
  * @date 2018/8/31
