@@ -16,6 +16,6 @@ public class ClientApp {
 
         UserVO rpcUser = userService.getUser(1);
 
-        //System.out.println(rpcUser);
+        System.out.println(rpcUser);
     }
 }

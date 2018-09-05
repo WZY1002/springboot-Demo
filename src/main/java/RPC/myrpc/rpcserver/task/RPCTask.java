@@ -2,6 +2,7 @@ package RPC.myrpc.rpcserver.task;
 
 import RPC.myrpc.model.PRCTanslator;
 import RPC.myrpc.rpcserver.service.UserServiceImpl;
+import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
@@ -63,7 +64,7 @@ public class RPCTask implements Runnable{
                 e.printStackTrace();
             } catch (InvocationTargetException e) {
                 e.printStackTrace();
-            }finally {
+            } finally {
                 if (is != null) {
                     try {
                         is.close();

@@ -8,7 +8,7 @@ public class PRCTanslator  implements Serializable{
     private static final long serialVersionUID = -1486631166196309756L;
 
     /**
-     * 调用，要生成代理类的Class类型
+     * 要调用方法的Class类型
      */
     private Class serviceClass;
     /**
