@@ -1,6 +1,6 @@
-package RPC.myrpc.rpcserver.service;
+package RPC.my_socket_rpc.rpcserver.service;
 
-import RPC.myrpc.rpcserver.task.RPCTask;
+import RPC.my_socket_rpc.rpcserver.task.RPCTask;
 
 import java.io.IOException;
 import java.net.ServerSocket;

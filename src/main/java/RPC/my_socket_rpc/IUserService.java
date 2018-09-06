@@ -1,6 +1,6 @@
-package RPC.myrpc;
+package RPC.my_socket_rpc;
 
-import RPC.myrpc.model.UserVO;
+import RPC.my_socket_rpc.model.UserVO;
 
 public interface IUserService {
 

@@ -1,4 +1,4 @@
-package RPC.myrpc.model;
+package RPC.my_socket_rpc.model;
 
 import java.io.Serializable;
 

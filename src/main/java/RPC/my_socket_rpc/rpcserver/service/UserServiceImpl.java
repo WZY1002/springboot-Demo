@@ -1,7 +1,7 @@
-package RPC.myrpc.rpcserver.service;
+package RPC.my_socket_rpc.rpcserver.service;
 
-import RPC.myrpc.IUserService;
-import RPC.myrpc.model.UserVO;
+import RPC.my_socket_rpc.IUserService;
+import RPC.my_socket_rpc.model.UserVO;
 import org.springframework.stereotype.Service;
 
 @Service

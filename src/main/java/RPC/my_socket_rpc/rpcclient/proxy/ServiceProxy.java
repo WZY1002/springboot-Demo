@@ -1,4 +1,4 @@
-package RPC.myrpc.rpcclient.proxy;
+package RPC.my_socket_rpc.rpcclient.proxy;
 
 import java.lang.reflect.Proxy;
 

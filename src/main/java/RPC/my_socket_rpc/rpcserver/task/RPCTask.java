@@ -1,8 +1,6 @@
-package RPC.myrpc.rpcserver.task;
+package RPC.my_socket_rpc.rpcserver.task;
 
-import RPC.myrpc.model.PRCTanslator;
-import RPC.myrpc.rpcserver.service.UserServiceImpl;
-import org.springframework.stereotype.Service;
+import RPC.my_socket_rpc.model.PRCTanslator;
 
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
@@ -38,10 +36,10 @@ public class RPCTask implements Runnable{
 
                 Class serviceClass = tanslator.getServiceClass();
                 //此处通过serviceClass获取实现类省略（dubbo是通过zookeeper服务注册实现，我这里直接new）
-                UserServiceImpl userService = new UserServiceImpl();
+                //UserServiceImpl userService = new UserServiceImpl();
 
-                //通过反射获取对象
-                //Object userService=serviceClass.newInstance();
+                //通过反射直接获取对象，也可以通过存根的全类名反射获取对象
+                Object userService=serviceClass.newInstance();
 
                 String methodName = tanslator.getMethodName();
                 Class[] paramsTypes = tanslator.getParamsTypes();
@@ -63,6 +61,8 @@ public class RPCTask implements Runnable{
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            } catch (InstantiationException e) {
                 e.printStackTrace();
             } finally {
                 if (is != null) {

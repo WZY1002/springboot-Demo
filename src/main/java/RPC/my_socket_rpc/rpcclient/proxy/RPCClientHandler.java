@@ -1,6 +1,7 @@
-package RPC.myrpc.rpcclient.proxy;
+package RPC.my_socket_rpc.rpcclient.proxy;
 
-import RPC.myrpc.model.PRCTanslator;
+import RPC.my_socket_rpc.model.PRCTanslator;
+import RPC.my_socket_rpc.rpcserver.service.UserServiceImpl;
 
 import java.io.*;
 import java.lang.reflect.InvocationHandler;
@@ -27,7 +28,9 @@ public class RPCClientHandler implements InvocationHandler {
         try{
             Socket socket = new Socket(host, port);
             PRCTanslator tanslator = new PRCTanslator();
-            tanslator.setServiceClass(serviceClass);
+            //tanslator.setServiceClass(serviceClass);
+            //传入存根的函数路径或者全类名都可以，服务端反射获取对象
+            tanslator.setServiceClass(UserServiceImpl.class);
             tanslator.setMethodName(method.getName());
             tanslator.setParamsValue(args);
 
