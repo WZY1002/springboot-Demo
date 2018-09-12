@@ -1,5 +1,5 @@
 //import config.RedisClient;
-import impldemo.MainApplication;
+import com.myproject.MainApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

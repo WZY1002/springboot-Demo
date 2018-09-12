@@ -1,14 +1,9 @@
-import Http.HttpClintPost;
-import Http.HttpPost;
-import Http.Httpspost;
 import RPC.my_socket_rpc.model.UserVO;
-import impldemo.MainApplication;
+import com.myproject.MainApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.web.client.RestTemplate;
-import sun.swing.BakedArrayList;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

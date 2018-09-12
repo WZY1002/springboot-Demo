@@ -1,14 +1,16 @@
+package com.myproject;
+
 import com.myproject.myspring.servlet.MyDispatcherServlet;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.mybatis.spring.annotation.MapperScan;
 
 @SpringBootApplication
-@ComponentScan(value ={"config", "impldemo","mybatisconfig","rabbitmq","interceptor", "strategy_pay"})//默认扫描@SpringBootApplication所在类的同级目录以及它的子目录
-@MapperScan("mybatisconfig.dao")
+//@ComponentScan(value ={"config", "impldemo","mybatisconfig","rabbitmq","interceptor", "strategy_pay"})//默认扫描@SpringBootApplication所在类的同级目录以及它的子目录
+//@MapperScan("mybatisconfig.dao")
 public class MainApplication {
 
     @Bean
