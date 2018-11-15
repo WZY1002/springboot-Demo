@@ -67,4 +67,49 @@ public class demoTest {
 //        return  a+b;
     }
 
+    @Test
+    public void demo2(){
+        long start=System.currentTimeMillis();
+        System.out.println(start);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                List list=new ArrayList();
+                for (int i=0;i<1000;i++){
+                    list.add(i);
+                }
+            }
+        }).start();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                List list2=new ArrayList();
+                for (int i=0;i<1000;i++){
+                    list2.add(i);
+                }
+            }
+        }).start();
+        long end=System.currentTimeMillis();
+        System.out.println(end);
+        System.out.println("分线程耗时："  +  (end-start ));
+    }
+
+
+    @Test
+    public void demo3(){
+        long start=System.currentTimeMillis();
+        System.out.println(start);
+        List list=new ArrayList();
+        for (int i=0;i<10000;i++){
+        list.add(i);
+        }
+        List list2=new ArrayList();
+        for (int i=0;i<10000;i++){
+            list2.add(i);
+        }
+        long end=System.currentTimeMillis();
+        System.out.println(end);
+        System.out.println("普通耗时："  +  (end-start ));
+    }
+
 }
