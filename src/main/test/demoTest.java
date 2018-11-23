@@ -1,7 +1,13 @@
 import RPC.my_socket_rpc.model.UserVO;
+import com.google.gson.Gson;
 import com.myproject.MainApplication;
+import commom.DemoBO;
+import commom.GsonUtils;
+import innerclass.Goods;
+import log.LogDemo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -9,9 +15,13 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MainApplication.class)
 public class demoTest {
+
+//    @Autowired
+//    private LogDemo logDemo;
 
     @Test
     public void doPost(){
@@ -110,6 +120,13 @@ public class demoTest {
         long end=System.currentTimeMillis();
         System.out.println(end);
         System.out.println("普通耗时："  +  (end-start ));
+    }
+
+
+    @Test
+    public void demo45(){
+        LogDemo logDemo=new LogDemo();
+        logDemo.printLog("log测试");
     }
 
 }
