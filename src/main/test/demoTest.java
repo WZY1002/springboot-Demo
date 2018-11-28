@@ -128,5 +128,10 @@ public class demoTest {
         LogDemo logDemo=new LogDemo();
         logDemo.printLog("log测试");
     }
+    @Test
+    public void demo6(){
+        List<Integer> list=new ArrayList<>();
+        list.set(0,1);
+    }
 
 }
