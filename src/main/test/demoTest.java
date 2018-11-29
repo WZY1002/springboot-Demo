@@ -1,4 +1,5 @@
 import RPC.my_socket_rpc.model.UserVO;
+import algorithm.model.SortBO;
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 import com.myproject.MainApplication;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -155,7 +157,49 @@ public class demoTest {
         System.out.println("mp2:"+map2);
         System.out.println("mp3:"+map3);
         System.out.println("mp4:"+map4);
+    }
 
+    private static SortBO sortBO=new SortBO();
+    static {
+        sortBO.setNum(1);
+    }
+
+    @Test
+    public void newdemo(){
+        SortBO sortBO=new SortBO(){{
+            setNum(1);
+        }};
+        System.out.println(sortBO);
+        DemoBO demoBO=new DemoBO();
+        //new DemoBO(){}定义了一个继承于DemoBO的匿名内部类
+        DemoBO demoBO2=new DemoBO(){{
+            setDemo("demo21");
+            setBlock("demo21");
+        }};
+        DemoBO demoBO3=new DemoBO("demo31","demo31");
+        System.out.println(demoBO);
+        System.out.println(demoBO2);
+        System.out.println(demoBO3);
+    }
+
+    @Test
+    public void  innerTest(){
+        List innerList=new DemoBO().getInnerField();
+        List normalList=new DemoBO().getNormalField();
+        Field field = null;
+        Field field1 = null;
+        try {
+            field = innerList.getClass().getDeclaredField("this$0");
+            field.setAccessible(true);
+            System.out.println(field.get(innerList).getClass());
+            field1 = normalList.getClass().getDeclaredField("this$0");
+            field1.setAccessible(true);
+            System.out.println(field1.get(normalList).getClass());
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 
 }

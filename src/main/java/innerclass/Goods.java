@@ -8,7 +8,7 @@ public class Goods {
         String dianshi=good1;
     }
 
-    private class getFoods implements Foods{
+    private static class getFoods implements Foods{
         @Override
         public String getFruit() {
             return "香蕉";
@@ -27,6 +27,11 @@ public class Goods {
 
     public static void main(String[] args) {
         System.out.println(new getGood1().dianshi);
+        new getFoods(){
+            {
+                getFruit();
+            }
+        };
 
     }
 
