@@ -44,7 +44,7 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         System.out.println("========冒泡排序基本类型==========");
-        int [] arr=AlgorithmUtil.getIntData(100);
+        int [] arr=AlgorithmUtil.getIntData(10);
         AlgorithmUtil.display(arr);
         sortBubble(arr);
         AlgorithmUtil.display(arr);

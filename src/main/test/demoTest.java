@@ -1,5 +1,6 @@
 import RPC.my_socket_rpc.model.UserVO;
 import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
 import com.myproject.MainApplication;
 import commom.DemoBO;
 import commom.GsonUtils;
@@ -13,7 +14,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @RunWith(SpringRunner.class)
@@ -132,6 +135,27 @@ public class demoTest {
     public void demo6(){
         List<Integer> list=new ArrayList<>();
         list.set(0,1);
+    }
+
+    @Test
+    public void mapAndHashMap(){
+        Gson gson=GsonUtils.gson;
+        Map<String,Object> innerMap=new LinkedTreeMap<String, Object>();
+        innerMap.put("user","小明");
+        Map<String,Object> inMap=new LinkedTreeMap<String, Object>();
+        inMap.put("data",innerMap);
+        String json=gson.toJson(inMap);
+        System.out.println(json);
+        Map<String,Object> map1=gson.fromJson(json,Map.class);
+        Map<String,Object> map2=gson.fromJson(gson.toJson(map1.get("data")),Map.class);
+
+        HashMap<String,Object> map3=gson.fromJson(json,HashMap.class);
+        HashMap<String,Object> map4=gson.fromJson(gson.toJson(map3.get("data")),HashMap.class);
+        System.out.println("mp1:"+map1);
+        System.out.println("mp2:"+map2);
+        System.out.println("mp3:"+map3);
+        System.out.println("mp4:"+map4);
+
     }
 
 }
