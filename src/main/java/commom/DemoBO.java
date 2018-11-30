@@ -50,6 +50,11 @@ public class DemoBO {
         return "外围类的使用权";
     }
 
+    /**
+     * 匿名内部类有返回值，被外部程序调用将获得内部类外围类实例的引用权
+     * @author wzy
+     * @date 2018/11/29
+     **/
     public List getInnerField(){
         List ss=new ArrayList(){
             {

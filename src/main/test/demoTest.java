@@ -186,15 +186,23 @@ public class demoTest {
     public void  innerTest(){
         List innerList=new DemoBO().getInnerField();
         List normalList=new DemoBO().getNormalField();
+        String xx=new DemoBO().getBlock();
         Field field = null;
         Field field1 = null;
         try {
             field = innerList.getClass().getDeclaredField("this$0");
             field.setAccessible(true);
             System.out.println(field.get(innerList).getClass());
-            field1 = normalList.getClass().getDeclaredField("this$0");
+
+
+            field1 = xx.getClass().getDeclaredField("this$0");
             field1.setAccessible(true);
-            System.out.println(field1.get(normalList).getClass());
+            System.out.println(field1.get(xx).getClass());
+
+
+//            field1 = normalList.getClass().getDeclaredField("this$0");
+//            field1.setAccessible(true);
+//            System.out.println(field1.get(normalList).getClass());
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
