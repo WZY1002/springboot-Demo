@@ -127,6 +127,18 @@
       <artifactId>poi-ooxml</artifactId>
       <version>3.15</version>
     </dependency>
+    <!-- WINRM4J_VERSION -->
+    <dependency>
+      <groupId>io.cloudsoft.windows</groupId>
+      <artifactId>winrm4j</artifactId>
+      <version>0.5.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
+    <dependency>
+      <groupId>commons-net</groupId>
+      <artifactId>commons-net</artifactId>
+      <version>3.3</version>
+    </dependency>
 
   </dependencies>
   <build>
