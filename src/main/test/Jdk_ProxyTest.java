@@ -1,6 +1,6 @@
-import proxy_jdk.Base;
-import proxy_jdk.BaseImplA;
-import proxy_jdk.BaseProxy;
+import design_mode.proxy_jdk.Base;
+import design_mode.proxy_jdk.BaseImplA;
+import design_mode.proxy_jdk.BaseProxy;
 
 
 public class Jdk_ProxyTest {

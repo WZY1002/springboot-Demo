@@ -1,9 +1,15 @@
 package commom;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.validation.annotation.Validated;
+
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class DemoBO {
+
+    @NotBlank(message = "demo不能为空")
     private String demo;
 
     private String block;

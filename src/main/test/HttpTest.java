@@ -1,6 +1,6 @@
-import Http.HttpClintPost;
-import Http.HttpPost;
-import Http.Httpspost;
+import RPC.http.HttpClintPost;
+import RPC.http.HttpPost;
+import RPC.http.Httpspost;
 import com.myproject.MainApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;

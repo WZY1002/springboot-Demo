@@ -5,6 +5,8 @@ import com.google.gson.internal.LinkedTreeMap;
 import com.myproject.MainApplication;
 import commom.DemoBO;
 import commom.GsonUtils;
+import enums.AccountType;
+import enums.DemoEnum;
 import innerclass.Goods;
 import log.LogDemo;
 import org.junit.Test;
@@ -12,6 +14,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.validation.annotation.Validated;
 
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
@@ -20,9 +23,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = MainApplication.class)
+//
+//@RunWith(SpringRunner.class)
+//@SpringBootTest(classes = MainApplication.class)
 public class demoTest {
 
 //    @Autowired
@@ -210,4 +213,99 @@ public class demoTest {
         }
     }
 
+    public void change(int a){
+        a=50;
+    }
+    public void newChange(int a){
+        a=a+10;
+        a=a++;
+    }
+    @Test
+    public void Test3() {
+        String aaa="";
+            int a=10;
+            System.out.println(a);
+            change(a);
+            System.out.println(a);
+            newChange(a);
+            System.out.println(a);
+//            Integer a1=1;
+    }
+
+
+    public void change(List<Integer> a){
+        a.add(3);
+    }
+    public void newChange(List<Integer> a){
+        a=new ArrayList<>();
+        a.add(5);
+    }
+    @Test
+    public void Test31() {
+        List<Integer> a=new ArrayList<>();
+        a.add(1);
+        a.add(2);
+        System.out.println(a);
+        change(a);
+        System.out.println(a);
+        newChange(a);
+        System.out.println(a);
+    }
+
+    @Test
+    public void Test1() {
+        String n=new String("xxx");
+        change(n);
+        System.out.println(n);
+    }
+
+    private void change(String n) {
+        n="aaa";
+        n=n+"ooo";
+    }
+
+    @Test
+    public void Test11(){
+            System.out.println("return value of getValue(): " +
+                    getValue());
+    }
+
+    public int getValue() {
+        try {
+            return 0;
+        } finally {
+            return 1;
+        }
+    }
+
+    @Test
+    public  void  tesdtenum(){
+        DemoBO demoBO=new DemoBO();
+        demoBO.setBlock(null);
+        demoBO.setDemo(null);
+        dodemo(demoBO);
+    }
+
+    private void dodemo(@Validated DemoBO demoBO) {
+        System.out.println(demoBO);
+    }
+
+    @Test
+    public void tesdtenum1(){
+        Class demo=DemoBO.class;
+        try {
+            DemoBO demoBO1=(DemoBO) demo.newInstance();
+            DemoBO demoBO2=(DemoBO) demo.newInstance();
+            System.out.println(demoBO1.equals(demoBO2));
+            DemoBO demoBO3=new DemoBO();
+            System.out.println(demoBO1.equals(demoBO3));
+            System.out.println(demoBO1.getClass());
+            System.out.println(demoBO2.getClass());
+            System.out.println(demoBO3.getClass());
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
 }
