@@ -51,7 +51,7 @@ public class BaseProxy implements InvocationHandler {
         //被代理的类型为Object基类
         //在调用具体函数方法前，执行功能处理
         System.out.println("代理帮忙");
-        //执行方法
+        //执行被代理方法
         result = method.invoke(tar,args);
         System.out.println("代理结束");
         //在调用具体函数方法后，执行功能处理

@@ -1,3 +1,5 @@
+package design_mode.proxy_jdk;
+
 import design_mode.proxy_jdk.Base;
 import design_mode.proxy_jdk.BaseImplA;
 import design_mode.proxy_jdk.BaseProxy;

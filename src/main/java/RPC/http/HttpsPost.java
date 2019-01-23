@@ -14,7 +14,7 @@ import java.security.SecureRandom;
  * @author:wzy
  * @date:2018/6/7
  **/
-public class Httpspost {
+public class HttpsPost {
     public void httpsRequest(String requestUrl,String requestMethod,String outputStr){
         StringBuffer buffer=null;
         try {
