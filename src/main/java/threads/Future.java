@@ -36,7 +36,7 @@ public class Future {
     }
 
     /**
-     * Future模式
+     * Future+普通线程
      * 多线程并行执行
      * @author wzy
      * @date 2018/11/15
@@ -98,6 +98,7 @@ public class Future {
         // 等凉菜 -- 必须要等待返回的结果，所以要调用join方法
         BumThread.start();
         try {
+            //让父线程等待子线程结束之后才能继续运行。
             BumThread.join();
         } catch (InterruptedException e) {
             e.printStackTrace();

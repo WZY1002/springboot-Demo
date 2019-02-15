@@ -144,6 +144,12 @@
       <artifactId>logging-interceptor</artifactId>
       <version>3.8.0</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.3.3</version>
+    </dependency>
 
   </dependencies>
   <build>

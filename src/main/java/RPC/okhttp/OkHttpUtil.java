@@ -2,10 +2,14 @@ package RPC.okhttp;
 
 import okhttp3.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItem;
 
 /**
  * okhttp的使用
@@ -73,6 +77,25 @@ public class OkHttpUtil {
                 .build();
         Response response = client.newCall(request).execute();
         String httpResult = response.body().string();
+    }
+
+    /**
+     * 字节流转文件格式
+     * @author  wzy
+     * @param bytes 字节流
+     * @return void
+     * @date  2019/2/15 15:21
+     **/
+    public void byteToMultipartFile(byte[] bytes,String fileName){
+        FileItem fileItem = null;
+        try{
+            fileItem = new DiskFileItem("file", org.springframework.http.MediaType.APPLICATION_OCTET_STREAM_VALUE, true, fileName, (int) bytes.length, null);
+            OutputStream os = fileItem.getOutputStream();
+            os.write(bytes,0,bytes.length);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        MultipartFile file = new CommonsMultipartFile(fileItem);
     }
 
 }

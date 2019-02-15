@@ -1,6 +1,8 @@
 package threads;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MyThreads {
 
@@ -31,7 +33,8 @@ public class MyThreads {
 
     public static void main(String[] args) {
 //        main1();
-        main2();
+//        main2();
+        main3();
     }
 
     private static void main2() {
@@ -82,5 +85,29 @@ public class MyThreads {
         thread2.start();
     }
 
+
+    /**
+     * 线程池执行多个线程，也是并行的
+     * @author wzy
+     * @date 2019/2/14
+     **/
+    public static void main3(){
+        ExecutorService executor = Executors.newCachedThreadPool();
+        executor.submit(new Runnable() {
+            @Override
+            public void run() {
+                for (int i=0;i<100;i++){
+                    System.out.println(i);
+                }
+            }
+        });
+        executor.submit(new Runnable() {
+            @Override
+            public void run() {
+                for (int i=100;i<200;i++){
+                    System.out.println(i);
+                }
+            }
+        });    }
 
 }
