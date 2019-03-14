@@ -97,5 +97,4 @@ public class OkHttpUtil {
         }
         MultipartFile file = new CommonsMultipartFile(fileItem);
     }
-
 }
