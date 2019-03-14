@@ -24,10 +24,8 @@ public class redistest {
 //    }
 
     @Autowired
-    private aaa aaa;
+    private Testa testa;
 
-    @Autowired
-    private bbb bbb;
 
     @Autowired
     private ccc ccc;

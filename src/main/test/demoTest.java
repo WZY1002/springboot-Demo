@@ -2,18 +2,12 @@ import RPC.my_socket_rpc.model.UserVO;
 import algorithm.model.SortBO;
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
-import com.myproject.MainApplication;
 import commom.DemoBO;
 import commom.GsonUtils;
-import enums.AccountType;
-import enums.DemoEnum;
-import innerclass.Goods;
+import impldemo.Testa;
+import impldemo.Testb;
 import log.LogDemo;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.validation.annotation.Validated;
 
 import java.lang.reflect.Field;
@@ -307,5 +301,29 @@ public class demoTest {
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void tesdtenum11(){
+        int [] a={1,2,3,4,5};
+        int [] b=a;
+        b[0]=10;
+        for (int x:a) {
+            System.out.println(x);
+        }
+        for (int x:b) {
+            System.out.println(x);
+        }
+    }
+
+
+    @Test
+    public void tes(){
+        Testa testa=new Testa();
+        Testb testb=new Testb();
+        System.out.println(""+testa);
+        System.out.println(""+testb);
+        ArrayList<String> xx=new ArrayList<>();
+        xx.trimToSize();
     }
 }
