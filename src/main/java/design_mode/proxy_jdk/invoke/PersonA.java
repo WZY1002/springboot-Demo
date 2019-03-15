@@ -12,6 +12,7 @@ public class PersonA implements Serializable{
 
     public String sex;
 
+
     public String sayHello(){
         return "Hellw";
     }
@@ -19,6 +20,31 @@ public class PersonA implements Serializable{
     private String sayLove(){
         return "I Love You";
     }
+
+
+//    public PersonA() {
+//    }
+
+//    private PersonA(String name,Integer age){
+//        this.name = name;
+//        this.age = age;
+//    }
+//
+//    public PersonA(String name, Integer age, String marry, String sex) {
+//        this.name = name;
+//        this.age = age;
+//        this.marry = marry;
+//        this.sex = sex;
+//    }
+
+    public String getMarry() {
+        return marry;
+    }
+
+    public void setMarry(String marry) {
+        this.marry = marry;
+    }
+
 
     public String getName() {
         return name;
