@@ -17,7 +17,7 @@ public class InvokeDemo {
     public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
 //        PersonA personA=new PersonA("李四",21,"保密","男");
         PersonA personA=new PersonA();
-        //匿名内部类的对象，无法一直存在虚拟机中，所以getDeclaredXxx()方法将无效，但getXxx方法会遍历超类所以能获取到;
+        //匿名内部类的对象，无法一直存在虚拟机中，所以getDeclaredXxx()方法将无效，但getXxx方法会递归计算超类所以能获取到;
         PersonA personB=new PersonA(){{setName("张三");setAge(16);setSex("男");setMarry("未婚");}};
         Class cl=personA.getClass();
         Class clb=personB.getClass();
