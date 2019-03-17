@@ -1,9 +1,6 @@
-package design_mode.proxy_jdk.invoke;
+package design_mode.proxy_jdk.invokeGet;
 
-import java.lang.reflect.Array;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.Arrays;
 
 /**
@@ -11,7 +8,7 @@ import java.util.Arrays;
  * @author wzy
  * @since 2019/3/12 19:35
  **/
-public class InvokeDemo {
+public class InvokeGet {
 
 
     public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {

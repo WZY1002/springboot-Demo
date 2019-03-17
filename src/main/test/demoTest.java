@@ -12,6 +12,7 @@ import org.springframework.validation.annotation.Validated;
 
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -325,5 +326,18 @@ public class demoTest {
         System.out.println(""+testb);
         ArrayList<String> xx=new ArrayList<>();
         xx.trimToSize();
+    }
+
+    @Test
+    public void te111s(){
+        double a1=2.05;
+        double a12=2.05;
+        double a13=2.66;
+        BigDecimal a=new BigDecimal(a1).setScale(2,BigDecimal.ROUND_HALF_UP);
+        BigDecimal ab=new BigDecimal(a12);
+        BigDecimal abc=new BigDecimal(a13);
+        System.out.println(a);
+        System.out.println(ab);
+        System.out.println(abc);
     }
 }

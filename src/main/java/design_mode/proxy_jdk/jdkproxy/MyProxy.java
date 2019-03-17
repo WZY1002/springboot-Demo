@@ -1,4 +1,4 @@
-package design_mode.proxy_jdk;
+package design_mode.proxy_jdk.jdkproxy;
 
 import javax.tools.JavaCompiler;
 import javax.tools.JavaCompiler.CompilationTask;
@@ -44,7 +44,7 @@ public class MyProxy {
 						 "public void " + m.getName() + "() {" + rt +
 						 "    try {" + rt +
 						 "    Method md = " + infce.getName() + ".class.getMethod(\"" + m.getName() + "\");" + rt +
-						 "    h.invoke(this, md);" + rt +
+						 "    h.invokeGet(this, md);" + rt +
 						 "    }catch(Exception e) {e.printStackTrace();}" + rt +
 
 						 "}";

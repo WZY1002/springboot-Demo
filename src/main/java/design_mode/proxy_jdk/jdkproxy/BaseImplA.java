@@ -1,4 +1,4 @@
-package design_mode.proxy_jdk;
+package design_mode.proxy_jdk.jdkproxy;
 
 /**
  * 被代理类A角色

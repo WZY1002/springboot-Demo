@@ -1,4 +1,4 @@
-package design_mode.proxy_jdk.invoke;
+package design_mode.proxy_jdk.invokeGet;
 
 import java.io.Serializable;
 

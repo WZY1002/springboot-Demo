@@ -1,8 +1,8 @@
-package design_mode.proxy_jdk;
+package design_mode.proxy_jdk.jdkproxy;
 
-import design_mode.proxy_jdk.Base;
-import design_mode.proxy_jdk.BaseImplA;
-import design_mode.proxy_jdk.BaseProxy;
+import design_mode.proxy_jdk.jdkproxy.Base;
+import design_mode.proxy_jdk.jdkproxy.BaseImplA;
+import design_mode.proxy_jdk.jdkproxy.BaseProxy;
 
 
 public class Jdk_ProxyTest {
