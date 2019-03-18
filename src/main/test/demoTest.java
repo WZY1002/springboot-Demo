@@ -4,19 +4,18 @@ import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
 import commom.DemoBO;
 import commom.GsonUtils;
+import design_mode.proxy_jdk.invokeGet.PersonA;
 import impldemo.Testa;
 import impldemo.Testb;
 import log.LogDemo;
+import org.apache.poi.ss.formula.functions.T;
 import org.junit.Test;
 import org.springframework.validation.annotation.Validated;
 
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 //
 //@RunWith(SpringRunner.class)
@@ -306,15 +305,11 @@ public class demoTest {
 
     @Test
     public void tesdtenum11(){
-        int [] a={1,2,3,4,5};
-        int [] b=a;
-        b[0]=10;
-        for (int x:a) {
-            System.out.println(x);
-        }
-        for (int x:b) {
-            System.out.println(x);
-        }
+        PersonA p=new PersonA();
+//       int a=p.getAge();
+       Integer b=new Integer(null);
+//        System.out.println(a);
+        System.out.println(b);
     }
 
 
@@ -339,5 +334,27 @@ public class demoTest {
         System.out.println(a);
         System.out.println(ab);
         System.out.println(abc);
+    }
+    @Test
+    public void te11a1s(){
+        List<PersonA> personAList=new ArrayList<>();
+        PersonA p1=new PersonA();
+        p1.setAge(20);p1.setName("张三");
+        PersonA p2=new PersonA();
+        p2.setAge(18);p2.setName("王五");
+        PersonA p3=new PersonA();
+        p3.setAge(19);p3.setName("李四");
+        personAList.add(p1);
+        personAList.add(p2);
+        personAList.add(p3);
+        PersonA[] arr= new PersonA[personAList.size()];
+        personAList.toArray(arr);
+        System.out.println(Arrays.toString(arr));
+        System.out.println(personAList.toString());
+        personAList.sort(Comparator.comparing(personA -> personA.getAge()));
+        personAList.forEach(a->a.setName("王二麻子"));
+        System.out.println(personAList.toString());
+//        Arrays.sort(arr,Comparator.comparing(PersonA::getAge));
+        System.out.println(Arrays.toString(arr));
     }
 }
