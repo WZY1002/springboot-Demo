@@ -9,8 +9,9 @@ public class Jdk_ProxyTest {
 
         public static void main(String args[])
         {
+            //实例化代理类
             BaseProxy proxy = new BaseProxy();
-            //绑定该类实现的所有接口
+            //代理类绑定该实现类的所有接口
             Base a = (Base) proxy.bind(new BaseImplA());
             a.doSomething();
         }

@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * 代理类
+ * 处理器
  * @author wzy
  * @return
  * @date 2018/8/9
@@ -24,9 +24,10 @@ public class BaseProxy implements InvocationHandler {
     public Object bind(Object tar)
     {
         this.tar = tar;
-        //绑定该类实现的所有接口，取得新的代理类
+        //绑定该类，构造实现指定所有接口，得到代理类的实例
         //1.根据参数loader和interfaces调用方法 getProxyClass(loader, interfaces)创建代理类$Proxy0,$Proxy0类 实现了interfaces的接口,并继承了Proxy类.
         //2.实例化$Proxy0并在构造方法中把BaseProxy传过去,接着$Proxy0调用父类Proxy的构造器,为h赋值
+        //ClacssLoader类加载器、    Class对象数组，所有元素将实现的接口、     h调度处理器
         Object tarclass=Proxy.newProxyInstance(tar.getClass().getClassLoader(),
                 tar.getClass().getInterfaces(),
                 this);
