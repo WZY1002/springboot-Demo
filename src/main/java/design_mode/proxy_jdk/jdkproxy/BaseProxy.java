@@ -37,7 +37,7 @@ public class BaseProxy implements InvocationHandler {
 
     /**
      * 这个方法不是显示的去调用,在继承了Proxy的$Proxy0中
-     * 当调用被代理类中的doSomething()方法时,就会执行$Proxy0中的invoke()方法，即这个invoke方法
+     * 当调用被代理类中的doSomething()方法时,就会执行$Proxy0中的invoke()方法，进而调用h.invoke方法
      * invokeGet()根据传入的代理对象，方法，参数来决定调用代理的哪个方法
      * @author wzy
      * @return
@@ -58,4 +58,6 @@ public class BaseProxy implements InvocationHandler {
         //在调用具体函数方法后，执行功能处理
         return result;
     }
+
+
 }
