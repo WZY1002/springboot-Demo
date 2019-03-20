@@ -63,14 +63,14 @@ public final class Constants {
     public static final int ID_LENGTH = 64;
 
     /**
-     * system config.properties.file
+     * system redisconfig.properties.file
      */
-    public static final String CONFIG_PROPERTIES_KEY = "config.properties.file";
+    public static final String CONFIG_PROPERTIES_KEY = "redisconfig.properties.file";
 
     /**
-     * config.properties
+     * redisconfig.properties
      */
-    public static final String CONFIG_PROPERTIES= "config.properties";
+    public static final String CONFIG_PROPERTIES= "redisconfig.properties";
 
     public static final String DOLLAR = "$";
 

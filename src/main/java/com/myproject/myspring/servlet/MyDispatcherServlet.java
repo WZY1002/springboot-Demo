@@ -123,7 +123,7 @@ public class MyDispatcherServlet extends HttpServlet{
     @Override
     public void init(ServletConfig config) throws ServletException {
         //加载配置
-        //doLoadConfig(config.getInitParameter("contextConfigLocation"));
+        //doLoadConfig(redisconfig.getInitParameter("contextConfigLocation"));
         //根据配置文件扫描所有相关的类
         doScanner("com.myproject.myspring");
         //初始化所有相关类的实例，并将其加入容器(即map)中

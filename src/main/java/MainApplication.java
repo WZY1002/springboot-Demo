@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(value ={"config", "impldemo","mybatisconfig","rabbitmq","interceptor", "design_mode.strategy_pay"})//默认扫描@SpringBootApplication所在类的同级目录以及它的子目录
+@ComponentScan(value ={"redisconfig", "impldemo","mybatisconfig","rabbitmq","interceptor", "design_mode.strategy_pay"})//默认扫描@SpringBootApplication所在类的同级目录以及它的子目录
 @MapperScan("mybatisconfig.dao")
 public class MainApplication {
 
