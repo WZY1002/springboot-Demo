@@ -22,20 +22,20 @@ public class PersonA implements Serializable{
     }
 
 
-//    public PersonA() {
-//    }
+    public PersonA() {
+    }
 
 //    private PersonA(String name,Integer age){
 //        this.name = name;
 //        this.age = age;
 //    }
 //
-//    public PersonA(String name, Integer age, String marry, String sex) {
-//        this.name = name;
-//        this.age = age;
-//        this.marry = marry;
-//        this.sex = sex;
-//    }
+    public PersonA(String name, Integer age, String marry, String sex) {
+        this.name = name;
+        this.age = age;
+        this.marry = marry;
+        this.sex = sex;
+    }
 
     public String getMarry() {
         return marry;
