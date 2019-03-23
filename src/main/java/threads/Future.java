@@ -37,7 +37,7 @@ public class Future {
 
     /**
      * Future+普通线程
-     * 多线程并行执行
+     * 多线程执行
      * @author wzy
      * @date 2018/11/15
      **/
@@ -118,40 +118,36 @@ public class Future {
 
     /**
      * 线程池+FutureTask
-     * 多线程并行执行
+     * 多线程执行
      * @author wzy
      * @date 2018/11/15
      **/
     private  static void executor(){
         long start = System.currentTimeMillis();
         ExecutorService executor = Executors.newCachedThreadPool();
-        Callable callable=new Callable() {
-            @Override
-            public Object call() throws Exception {
-                try {
-                    Thread.sleep(1000*3);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                return "包子准备完毕";
+        Callable callable= (Callable<String>) () -> {
+            try {
+                Thread.sleep(1000*3);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+            return "包子准备完毕";
         };
-        Callable callable2=new Callable() {
-            @Override
-            public Object call() throws Exception {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                return "凉菜准备完毕";
+        Callable callable2= () -> {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+            return "凉菜准备完毕";
         };
         FutureTask<String> futureTask = new FutureTask<String>(callable);
         FutureTask<String> futureTask2 = new FutureTask<String>(callable2);
         executor.submit(futureTask);
         executor.submit(futureTask2);
         executor.shutdown();
+        //如果任务结束，无论正常结束、中断、异常结束都返回true
+        futureTask.isDone();
         try {
             System.out.println(futureTask.get());
         } catch (InterruptedException e) {

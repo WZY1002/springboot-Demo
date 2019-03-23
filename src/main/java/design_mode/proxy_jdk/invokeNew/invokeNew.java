@@ -1,16 +1,21 @@
 package design_mode.proxy_jdk.invokeNew;
 
+import design_mode.proxy_jdk.invokeGet.PersonA;
+
 import java.lang.reflect.Array;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.TypeVariable;
 import java.util.Arrays;
 
 public class invokeNew {
 
-    public static void main(String[] args) {
-        int[] a={1,2,3};
-        System.out.println(Arrays.toString(a));
-        int[] b=(int [])getCopyOf(a,10);
-        System.out.println(Arrays.toString(b));
+    public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+//        int[] a={1,2,3};
+//        System.out.println(Arrays.toString(a));
+//        int[] b=(int [])getCopyOf(a,10);
+//        System.out.println(Arrays.toString(b));
+        myInstant();
     }
 
     /***
@@ -31,5 +36,13 @@ public class invokeNew {
         Object newArray=Array.newInstance(componentType,newLength);
         System.arraycopy(soure,0,newArray,0,Math.min(soureLength,newLength));
         return newArray;
+    }
+
+    public static void myInstant() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        Class cl= PersonA.class;
+        Constructor constructor=cl.getConstructor();
+        PersonA o =(PersonA) constructor.newInstance();
+        o.setName("张三");
+        System.out.println(o.toString());
     }
 }
