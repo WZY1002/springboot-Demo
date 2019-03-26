@@ -9,9 +9,19 @@ import java.io.*;
  **/
 public class ByteStreamOperation {
     public static void main(String[] args) throws IOException {
-        copyFile("D:\\demoFile\\demoText.txt","D:\\demoFile\\demoFile2\\demoText2.txt");
+        long start=System.currentTimeMillis();
+        copyFile("D:\\demoFile\\一念永恒.txt","D:\\demoFile\\demoFile2\\demoText2.txt");
+        System.out.println("总耗时：" +(System.currentTimeMillis()-start));
     }
 
+    /***
+     * 字节流拷贝文件
+     * @param src
+     * @param dist
+     * @return void
+     * @author  wzy
+     * @since  2019/3/25 18:58
+     **/
     public static void copyFile(String src, String dist) throws IOException {
         FileInputStream inputStream=new FileInputStream(src);
         FileOutputStream outputStream=new FileOutputStream(dist);
