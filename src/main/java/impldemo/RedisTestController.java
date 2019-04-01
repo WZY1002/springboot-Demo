@@ -1,7 +1,7 @@
 //package demo;
 //
 //
-////import redisconfig.RedisClientSingle;
+////import redis.redisconfig.RedisClientSingle;
 //import mybatisconfig.dao.UserDAO;
 //import mybatisconfig.model.UserPO;
 //import org.springframework.beans.factory.annotation.Autowired;
