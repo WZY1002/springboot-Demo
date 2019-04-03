@@ -1,10 +1,10 @@
-package config;
+package redis.myredis.singleconfig;
 
 
 import org.apache.poi.ss.formula.functions.T;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+import redis.myredis.RedisClient;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
@@ -14,7 +14,7 @@ import java.util.List;
  * Redis客户端单机版
  */
 @Component
-public class RedisClientSingle implements config.RedisClient {
+public class RedisClientSingle implements RedisClient {
 
     @Autowired
     private JedisPool jedisPool;
@@ -232,9 +232,14 @@ public class RedisClientSingle implements config.RedisClient {
 
     @Override
     public String sset(String key, List<T> list) {
+        return null;
+    }
+
+    @Override
+    public Long rpush(String key, Object val) {
         try {
             jedis = jedisPool.getResource();
-            Long result = jedis.m(key, list);
+            Long result = jedis.lpush(key, (String) val);
             return result;
         } finally {
             if (jedis != null) {

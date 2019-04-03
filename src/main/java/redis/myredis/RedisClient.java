@@ -1,4 +1,4 @@
-package config;
+package redis.myredis;
 
 import org.apache.poi.ss.formula.functions.T;
 
@@ -38,5 +38,7 @@ public interface RedisClient {
     String rpop(String key);
 
     String sset(String  key, List<T> list);
+
+    Long rpush(String key,Object val);
 
 }
